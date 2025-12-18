@@ -36,4 +36,18 @@ class PaymentProcessor:
         if not self.authorizer.is_authorized():
             raise Exception("Not authorized")
         print(f"Processing payment for order with id {order.id}")
+
         order.set_status("paid")
+
+   
+# its before dependency injection
+# class PaymentProcessor:
+    
+#     def pay(self, order):
+#         authorizer = Authorizer_SMS()
+#         authorizer.generate_sms_code()
+#         authorizer.authorize()
+#         if not authorizer.is_authorized():
+#             raise Exception("Not authorized")
+#         print(f"Processing payment for order with id {order.id}")
+#         order.set_status("paid")
